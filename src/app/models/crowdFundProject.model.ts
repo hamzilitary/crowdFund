@@ -1,4 +1,4 @@
-export class CrowdFundProj {
+export class CrowdFundProject {
 
   fundsRaised: 0;
 

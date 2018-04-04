@@ -10,6 +10,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AddProjectComponent } from './add-project/add-project.component';
+import { DetailComponent } from './detail/detail.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -23,7 +24,8 @@ export const firebaseConfig = {
     AppComponent,
     NavbarComponent,
     HomepageComponent,
-    AddProjectComponent
+    AddProjectComponent,
+    DetailComponent
   ],
   imports: [
     BrowserModule,

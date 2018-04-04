@@ -1,0 +1,17 @@
+<div class="card">
+  <div class="card-body">
+    <h2>{{(projectToDisplay | async)?.name}}</h2>
+    <h5>Funding Goal: {{(projectToDisplay | async)?.goal}}</h5>
+    <h5>Starters:</h5>
+    <ul>
+      <div *ngFor= "let starter of (projectToDisplay | async)?.starters">
+        <li>{{starter}}</li>
+      </div>
+    </ul>
+    <h5>Project Description:</h5>
+    <p>{{(projectToDisplay | async)?.desc}}</p>
+
+    <h5>Plans After Funding:</h5>
+    <p>{{(projectToDisplay | async)?.plans}}</p>
+  </div>
+</div>

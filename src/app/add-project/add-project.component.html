@@ -16,9 +16,7 @@
         <li>{{starter}}</li>
       </div>
     </ul>
-
   </div>
-
   <div>
     <label>Project Description:</label>
     <br>
@@ -37,7 +35,6 @@
   <div class="">
     <label>Swag?</label>
     <input #newSwag type="checkbox" value="true">
-
   </div>
-  <button (click)="addProject(newName.value, newDescription.value, newGoal.value, newPlans.value, newSwag.value); newName.value=''; newDescription.value=''; newGoal.value=''; newPlans.value=''"  type="button" name="button">ADD</button>
+  <button (click)="addProject(newName.value, newDescription.value, newGoal.value, newPlans.value, newSwag.value); newName.value=''; newDescription.value=''; newGoal.value=''; newPlans.value=''" routerLink='' type="button" name="button">ADD</button>
 </div>

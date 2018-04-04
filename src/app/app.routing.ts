@@ -5,6 +5,8 @@ import { AddProjectComponent } from './add-project/add-project.component';
 import { DetailComponent } from './detail/detail.component';
 import { AdminComponent } from './admin/admin.component';
 import { AdminDetailComponent } from './admin-detail/admin-detail.component';
+import { AngularFireAuth } from 'angularfire2/auth'
+import { AuthGuard } from './services/auth-guard.service'
 
 const appRoutes: Routes = [
   {
@@ -13,7 +15,8 @@ const appRoutes: Routes = [
   },
   {
     path: 'add',
-    component: AddProjectComponent
+    component: AddProjectComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'projects/:id',
@@ -21,11 +24,14 @@ const appRoutes: Routes = [
   },
   {
     path: 'admin',
-    component: AdminComponent
+    component: AdminComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'admin/:id',
-    component: AdminDetailComponent
+    component: AdminDetailComponent,
+    canActivate: [AuthGuard]
+
   }
 
 ];

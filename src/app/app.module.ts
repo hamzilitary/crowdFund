@@ -12,6 +12,7 @@ import { HttpModule } from '@angular/http';
 import { AddProjectComponent } from './add-project/add-project.component';
 import { DetailComponent } from './detail/detail.component';
 import { AdminComponent } from './admin/admin.component';
+import { AdminDetailComponent } from './admin-detail/admin-detail.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -27,7 +28,8 @@ export const firebaseConfig = {
     HomepageComponent,
     AddProjectComponent,
     DetailComponent,
-    AdminComponent
+    AdminComponent,
+    AdminDetailComponent
   ],
   imports: [
     BrowserModule,

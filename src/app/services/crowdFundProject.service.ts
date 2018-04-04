@@ -31,4 +31,14 @@ export class ProjectService {
     projectEntryInFirebase.remove();
   }
 
+  updateProject(localUpdatedProject) {
+    let projectEntryInFirebase = this.getProjectById(localUpdatedProject.$key);
+    projectEntryInFirebase.update({name: localUpdatedProject.name, starters: localUpdatedProject.starters, desc: localUpdatedProject.desc, goal: localUpdatedProject.goal, plans: localUpdatedProject.plans, swag: localUpdatedProject.swag});
+  }
+
+  updateProjectStarters(localUpdatedProject) {
+    let projectEntryInFirebase = this.getProjectById(localUpdatedProject.$key);
+    projectEntryInFirebase.update({starters: localUpdatedProject.starters});
+  }
+
 }

@@ -1,9 +1,11 @@
 <div *ngFor="let project of projects | async"  class="card">
   <div class="card-body">
     <h3><em>{{project.name}}</em></h3>
+    <p>{{project.desc}}</p>
     <div *ngFor="let starter of project['starters']">
       <h6>{{starter}}</h6>
     </div>
     <button (click)="deleteProject(project)" type="button" name="button">Delete Project</button>
+    <button (click)="goToAdminDetail(project)" type="button" name="button">Edit Project</button>
   </div>
 </div>

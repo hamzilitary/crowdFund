@@ -1,0 +1,35 @@
+<div class="card">
+  <div class="card-body">
+    <div class="form-group">
+      <label>Enter Name:</label>
+      <input class="form-control" [(ngModel)]="projectToDisplay.name">
+    </div>
+
+    <div class="form-group">
+      <label>Funding Goal:</label>
+      <input type="number" class="form-control" [(ngModel)]="projectToDisplay.goal">
+    </div>
+
+    <div class="form-group">
+      <label>Enter Description:</label>
+      <textarea class="form-control" [(ngModel)]="projectToDisplay.desc"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Enter Plans:</label>
+      <textarea class="form-control" [(ngModel)]="projectToDisplay.plans"></textarea>
+    </div>
+    <h5>Starters:</h5>
+    <ul>
+      <div *ngFor= "let starter of projectToDisplay?.starters; let idx = index">
+        <li>{{starter}}</li><button (click)="removeStarter(idx)">Remove</button>
+      </div>
+    </ul>
+    <div class="input-group">
+      <label>Add Starters: </label>
+      <input #newStarter>
+      <button class="input-group-button"(click)="addStarter(newStarter.value); newStarter.value='';" type="button" name="button">ADD</button>
+    </div>
+  </div>
+  <button type="button" (click)="updateProject()" routerLink="/admin">Update</button>
+</div>

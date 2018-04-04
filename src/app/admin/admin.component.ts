@@ -27,4 +27,8 @@ export class AdminComponent implements OnInit {
     }
   }
 
+  goToAdminDetail(clicked) {
+    this.router.navigate(['admin', clicked.$key]);
+  }
+
 }

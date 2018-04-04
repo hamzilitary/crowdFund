@@ -19,17 +19,32 @@
       <label>Enter Plans:</label>
       <textarea class="form-control" [(ngModel)]="projectToDisplay.plans"></textarea>
     </div>
+    <div class="form-group">
+      <label>Choose A Category</label>
+      <select class="form-control"[(ngModel)]="projectToDisplay.category">
+        <option value="Video">Video</option>
+        <option value="Science/Tech">Science/Tech</option>
+        <option value="Photography">Photography</option>
+        <option value="Food/Craft">Food & Craft</option>
+        <option value="Comics/Illustration">Comics & Illustration</option>
+        <option value="Publishing">Publishing</option>
+        <option value="Games">Games</option>
+        <option value="Mad Science">Mad Science</option>
+        <option value="Giant Robots">Giant Robots</option>
+        <option value="Charitable Cause">Charitble Cause</option>
+        <option value="Music">Music</option>
+      </select>
+    </div>
     <h5>Starters:</h5>
     <ul>
       <div *ngFor= "let starter of projectToDisplay?.starters; let idx = index">
         <li>{{starter}}</li><button (click)="removeStarter(idx)">Remove</button>
       </div>
     </ul>
-    <div class="input-group">
-      <label>Add Starters: </label>
-      <input #newStarter>
-      <button class="input-group-button"(click)="addStarter(newStarter.value); newStarter.value='';" type="button" name="button">ADD</button>
-    </div>
+    <label>Add Starters: </label>
+    <input #newStarter>
+    <button class="input-group-button"(click)="addStarter(newStarter.value); newStarter.value='';" type="button" name="button">ADD</button>
+
   </div>
   <button type="button" (click)="updateProject()" routerLink="/admin">Update</button>
 </div>

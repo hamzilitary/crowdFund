@@ -2,7 +2,7 @@
 
 <div *ngFor="let project of projects | async"  class="card">
   <div class="card-body">
-    <h3><em>{{project.name}}</em></h3>
+    <h3><em>{{project.name}}</em> - {{project.category}}</h3>
     <div *ngFor="let starter of project['starters']">
       <h6>{{starter}}</h6>
     </div>

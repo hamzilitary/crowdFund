@@ -1,17 +1,25 @@
 <div class="card">
   <div class="card-body">
-    <h2>{{(projectToDisplay | async)?.name}}</h2>
-    <h5>Funding Goal: {{(projectToDisplay | async)?.goal}}</h5>
+    <h2>{{projectToDisplay?.name}}</h2>
+    <h5>Funding Goal: {{projectToDisplay?.goal}}</h5>
+    <h5>Total Funding: {{projectToDisplay?.fundsRaised}}</h5>
+
     <h5>Starters:</h5>
     <ul>
-      <div *ngFor= "let starter of (projectToDisplay | async)?.starters">
+      <div *ngFor= "let starter of projectToDisplay?.starters">
         <li>{{starter}}</li>
       </div>
     </ul>
     <h5>Project Description:</h5>
-    <p>{{(projectToDisplay | async)?.desc}}</p>
+    <p>{{projectToDisplay?.desc}}</p>
 
     <h5>Plans After Funding:</h5>
-    <p>{{(projectToDisplay | async)?.plans}}</p>
+    <p>{{projectToDisplay?.plans}}</p>
+
+    <div class="form-group">
+      <label>Donate Amount:</label>
+      <input type="number" #amount>
+    </div>
+    <button (click)="fundProject(amount.value)">Fund Project!</button>
   </div>
 </div>

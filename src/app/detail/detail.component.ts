@@ -19,9 +19,15 @@ export class DetailComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.forEach((urlParameters) => {
-     this.projectId = urlParameters['id'];
-   });
-   this.projectToDisplay = this.projectService.getProjectById(this.projectId);
+      this.projectId = urlParameters['id'];
+      });
+      this.projectService.getProjectById(this.projectId).subscribe(dataLastEmittedFromObserver => {this.projectToDisplay = dataLastEmittedFromObserver;
+    });
+  }
+
+  fundProject(amount: string) {
+    this.projectToDisplay.fundsRaised = parseInt(this.projectToDisplay.fundsRaised) + parseInt(amount);
+    this.projectService.updateFunding(this.projectToDisplay)
   }
 
 }

@@ -1,0 +1,43 @@
+<h3>Add New Project</h3>
+<div>
+  <div>
+    <label>Project Name:</label>
+    <br>
+    <input #newName>
+  </div>
+
+  <div>
+    <label>Add Starters:</label>
+    <br>
+    <input #newStarter>
+    <button (click)="addStarter(newStarter.value); newStarter.value='';" type="button" name="button">ADD</button>
+    <ul>
+      <div *ngFor = "let starter of starters">
+        <li>{{starter}}</li>
+      </div>
+    </ul>
+
+  </div>
+
+  <div>
+    <label>Project Description:</label>
+    <br>
+    <textarea #newDescription></textarea>
+  </div>
+  <div>
+    <label>Project Goal:</label>
+    <br>
+    <input type="number" #newGoal>
+  </div>
+  <div>
+    <label>Plans For Money:</label>
+    <br>
+    <textarea #newPlans></textarea>
+  </div>
+  <div class="">
+    <label>Swag?</label>
+    <input #newSwag type="checkbox" value="true">
+
+  </div>
+  <button (click)="addProject(newName.value, newDescription.value, newGoal.value, newPlans.value, newSwag.value); newName.value=''; newDescription.value=''; newGoal.value=''; newPlans.value=''"  type="button" name="button">ADD</button>
+</div>

@@ -1,6 +1,7 @@
 export class CrowdFundProject {
 
   fundsRaised: 0;
+  public swag: boolean;
 
-  constructor(name: string, starters: string[], desc: string, toRaise: number, willDo: string, swag: boolean){}
+  constructor(public name: string, public starters: string[], public desc: string, public goal: number, public plans: string){}
 }

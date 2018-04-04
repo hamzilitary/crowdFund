@@ -8,8 +8,13 @@ export class ProjectService {
   constructor(private database: AngularFireDatabase) {
     this.projects = database.list('projects');
   }
-getProjects(){
-  return this.projects
-}
+
+  getProjects(){
+    return this.projects
+  }
+
+  addProject(newProject: CrowdFundProject) {
+    this.projects.push(newProject);
+  }
 
 }

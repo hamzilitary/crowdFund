@@ -5,16 +5,13 @@ import { CrowdFundProject } from '../models/crowdFundProject.model';
 import { Router } from '@angular/router';
 
 
-
-
 @Component({
-  selector: 'app-homepage',
-  templateUrl: './homepage.component.html',
-  styleUrls: ['./homepage.component.css'],
+  selector: 'app-admin',
+  templateUrl: './admin.component.html',
+  styleUrls: ['./admin.component.css'],
   providers: [ProjectService]
 })
-
-export class HomepageComponent implements OnInit {
+export class AdminComponent implements OnInit {
   projects: FirebaseListObservable<any[]>;
 
   constructor(private projectService: ProjectService,
@@ -24,8 +21,10 @@ export class HomepageComponent implements OnInit {
     this.projects = this.projectService.getProjects();
   }
 
-  goToDetail(clicked) {
-    this.router.navigate(['projects', clicked.$key]);
-  };
+  deleteProject(projectToDelete) {
+    if(confirm("Are you sure you want to delete this project?")) {
+      this.projectService.deleteProject(projectToDelete)
+    }
+  }
 
 }

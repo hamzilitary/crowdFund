@@ -16,6 +16,8 @@ import { Router } from '@angular/router';
 
 export class HomepageComponent implements OnInit {
   projects: FirebaseListObservable<any[]>;
+  filterCategory: string;
+  filtered: boolean = false;
 
   constructor(private projectService: ProjectService,
   private router: Router) { }
@@ -26,6 +28,16 @@ export class HomepageComponent implements OnInit {
 
   goToDetail(clicked) {
     this.router.navigate(['projects', clicked.$key]);
-  };
+  }
+
+  setFilterCategory(category: string) {
+    if(!this.filtered){
+      this.filterCategory = category;
+      this.filtered = true;
+    } else {
+      this.filtered = false;
+    }
+  }
+
 
 }

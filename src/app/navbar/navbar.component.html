@@ -5,11 +5,18 @@
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
         <li><a class="nav-link" routerLink="add">Add Project</a></li>
-        <li><a class="nav-link" routerLink="admin">Admin</a></li>
+        <div *ngIf = "isLoggedIn">
+          <li><a class="nav-link" routerLink="admin">Admin</a></li>
+        </div>
       </ul>
       <ul class="nav navbar-nav account">
-        <li><a class="nav-link" routerLink="">Log In</a></li>
-        <li></li>
+        <div *ngIf="!isLoggedIn">
+          <li><a class="nav-link" (click)="login()">Log In</a></li>
+        </div>
+        <div *ngIf="isLoggedIn">
+          <li>{{userName}}</li>
+          <li><a class="nav-link" (click)="logout()">Log Out</a></li>
+        </div>
       </ul>
     </div>
 </nav>

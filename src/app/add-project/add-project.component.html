@@ -1,14 +1,13 @@
 <h3>Add New Project</h3>
-<div>
-  <div>
+<div class="card">
+  <div class="card-body">
+  <div class="form-group">
     <label>Project Name:</label>
-    <br>
-    <input #newName>
+    <input class="form-control" #newName>
   </div>
 
-  <div>
+  <div class="form-group">
     <label>Add Starters:</label>
-    <br>
     <input #newStarter>
     <button (click)="addStarter(newStarter.value); newStarter.value='';" type="button" name="button">ADD</button>
     <ul>
@@ -17,27 +16,28 @@
       </div>
     </ul>
   </div>
-  <div>
+  <div class="form-group">
     <label>Project Description:</label>
     <br>
-    <textarea #newDescription></textarea>
-  </div>
-  <div>
-    <label>Project Goal:</label>
-    <br>
-    <input type="number" #newGoal>
-  </div>
-  <div>
-    <label>Plans For Money:</label>
-    <br>
-    <textarea #newPlans></textarea>
-  </div>
-  <div class="">
-    <label>Swag?</label>
-    <input #newSwag type="checkbox" value="true">
+    <textarea class="form-control" #newDescription></textarea>
   </div>
   <div class="form-group">
-    <select #newCategory>
+    <label>Project Goal:</label>
+    <br>
+    <input class="form-control" type="number" #newGoal>
+  </div>
+  <div class="form-group">
+    <label>Plans For Money:</label>
+    <br>
+    <textarea class="form-control" #newPlans></textarea>
+  </div>
+  <div>
+    <label>Swag?</label>
+    <br>
+    <input class="form-control" #newSwag type="checkbox" value="true">
+  </div>
+  <div class="form-group">
+    <select class="form-control" #newCategory>
       <option value="Video">Video</option>
       <option value="Science/Tech">Science/Tech</option>
       <option value="Photography">Photography</option>
@@ -52,4 +52,5 @@
     </select>
   </div>
   <button (click)="addProject(newName.value, newDescription.value, newGoal.value, newPlans.value, newSwag.value, newCategory.value); newName.value=''; newDescription.value=''; newGoal.value=''; newPlans.value=''" routerLink='' type="button" name="button">ADD</button>
+  </div>
 </div>

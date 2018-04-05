@@ -12,7 +12,7 @@ import { CrowdFundProject } from '../models/crowdFundProject.model';
 })
 export class ScienceTechComponent implements OnInit {
   projects: FirebaseListObservable<any[]>;
-  filterCategory: string = "Science/Technology";
+  filterCategory: string = "Science/Technologynology";
 
   constructor(private projectService: ProjectService, private router: Router) { }
 

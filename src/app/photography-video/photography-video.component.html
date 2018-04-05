@@ -1,0 +1,13 @@
+<h1>Photography & Video</h1>
+<div *ngFor="let project of projects | async"  class="card">
+  <div *ngIf = "project.category === filterCategory">
+  <div class="card-body">
+    <h3><em>{{project.name}}</em> - {{project.category}}</h3>
+    <div *ngFor="let starter of project['starters']">
+      <h6>{{starter}}</h6>
+    </div>
+    <button (click)="goToDetail(project)" type="button" name="button">View Project</button>
+
+  </div>
+</div>
+</div>

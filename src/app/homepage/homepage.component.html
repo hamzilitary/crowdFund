@@ -2,17 +2,11 @@
 
 <div class="form-group">
   <select #newCategory>
-    <option value="Video">Video</option>
+    <option value="Photography/Video">Photography/Video</option>
     <option value="Science/Tech">Science/Tech</option>
-    <option value="Photography">Photography</option>
     <option value="Food/Craft">Food & Craft</option>
     <option value="Comics/Illustration">Comics & Illustration</option>
-    <option value="Publishing">Publishing</option>
     <option value="Games">Games</option>
-    <option value="Mad Science">Mad Science</option>
-    <option value="Giant Robots">Giant Robots</option>
-    <option value="Charitable Cause">Charitble Cause</option>
-    <option value="Music">Music</option>
   </select>
 </div>
 <button (click)="setFilterCategory(newCategory.value)">Toggle Filter</button>

@@ -15,7 +15,14 @@ import { AdminComponent } from './admin/admin.component';
 import { AdminDetailComponent } from './admin-detail/admin-detail.component';
 import { AuthenticationService } from './services/authentication.service';
 import { AuthGuard } from './services/auth-guard.service'
-import { AngularFireAuth } from 'angularfire2/auth'
+import { AngularFireAuth } from 'angularfire2/auth';
+import { PhotographyVideoComponent } from './photography-video/photography-video.component'
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { FoodCraftComponent } from './food-craft/food-craft.component';
+import { GamesComponent } from './games/games.component';
+import { ScienceTechComponent } from './science-tech/science-tech.component';
+import { ComicsIllustrationComponent } from './comics-illustration/comics-illustration.component';
+
 
 
 export const firebaseConfig = {
@@ -33,7 +40,12 @@ export const firebaseConfig = {
     AddProjectComponent,
     DetailComponent,
     AdminComponent,
-    AdminDetailComponent
+    AdminDetailComponent,
+    PhotographyVideoComponent,
+    FoodCraftComponent,
+    GamesComponent,
+    ScienceTechComponent,
+    ComicsIllustrationComponent
   ],
   imports: [
     BrowserModule,

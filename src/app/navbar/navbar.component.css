@@ -1,3 +1,7 @@
 li {
   color: white;
 }
+
+.right {
+margin-left: auto;
+}

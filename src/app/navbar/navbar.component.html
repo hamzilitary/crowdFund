@@ -4,18 +4,23 @@
     </div>
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li><a class="nav-link" routerLink="add">Add Project</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="add">Add Project</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="photo">Photography/Video</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="food">Food/Crafts</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="games">Games</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="tech">Science/Tech</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="comics">Comics/Illustration</a></li>
+
         <div *ngIf = "isLoggedIn">
-          <li><a class="nav-link" routerLink="admin">Admin</a></li>
         </div>
       </ul>
-      <ul class="nav navbar-nav account">
+      <ul class="nav navbar-nav right">
         <div *ngIf="!isLoggedIn">
-          <li><a class="nav-link" (click)="login()">Log In</a></li>
+          <li class="nav-item"><a class="nav-link" (click)="login()">Log In</a></li>
         </div>
         <div *ngIf="isLoggedIn">
-          <li>{{userName}}</li>
-          <li><a class="nav-link" (click)="logout()">Log Out</a></li>
+          <li class="nav-item right"><a class="nav-link" routerLink="admin">Admin</a></li>
+          <li class="nav-item right"><a class="nav-link" (click)="logout()">Log Out</a></li>
         </div>
       </ul>
     </div>

@@ -12,6 +12,7 @@
 <button (click)="setFilterCategory(newCategory.value)">Toggle Filter</button>
 <div *ngIf = "!filtered">
 <div *ngFor="let project of projects | async"  class="card">
+  <img class="card-img-top" src="{{project.imgUrl}}" alt="">
   <div class="card-body">
     <h3><em>{{project.name}}</em> - {{project.category}}</h3>
     <div *ngFor="let starter of project['starters']">
@@ -22,16 +23,18 @@
 </div>
 </div>
 <div *ngIf = "filtered">
-  <div *ngFor="let project of projects | async"  class="card">
+  <div *ngFor="let project of projects | async">
     <div *ngIf = "project.category === filterCategory">
-    <div class="card-body">
-      <h3><em>{{project.name}}</em> - {{project.category}}</h3>
-      <div *ngFor="let starter of project['starters']">
-        <h6>{{starter}}</h6>
+      <div class="card">
+        <img class="card-img-top" src="{{project.imgUrl}}" alt="">
+        <div class="card-body">
+          <h3><em>{{project.name}}</em> - {{project.category}}</h3>
+          <div *ngFor="let starter of project['starters']">
+            <h6>{{starter}}</h6>
+          </div>
+          <button (click)="goToDetail(project)" type="button" name="button">View Project</button>
+        </div>
       </div>
-      <button (click)="goToDetail(project)" type="button" name="button">View Project</button>
-
     </div>
-  </div>
   </div>
 </div>

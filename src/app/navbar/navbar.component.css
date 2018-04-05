@@ -3,5 +3,6 @@ li {
 }
 
 .right {
-margin-left: auto;
+  margin-left: auto;
+  display: inline-block;
 }

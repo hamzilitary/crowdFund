@@ -21,8 +21,8 @@ export class AddProjectComponent implements OnInit {
     this.starters.push(starter)
   }
 
-  addProject(name: string, description: string, goal: number, plans: string, swag: string, category: string) {
-    const newProject: CrowdFundProject = new CrowdFundProject(name, this.starters, description, goal, plans, category)
+  addProject(name: string, description: string, goal: number, plans: string, swag: string, category: string, imageUrl: string) {
+    const newProject: CrowdFundProject = new CrowdFundProject(name, this.starters, description, goal, plans, category, imageUrl)
     if (swag === "true"){
       newProject.swag = true;
     }

@@ -7,6 +7,11 @@
   </div>
 
   <div class="form-group">
+    <label>Project Image:</label>
+    <input placeholder="Enter Image URL here" class="form-control" #newImage>
+  </div>
+
+  <div class="form-group">
     <label>Add Starters:</label>
     <input #newStarter>
     <button (click)="addStarter(newStarter.value); newStarter.value='';" type="button" name="button">ADD</button>
@@ -45,6 +50,6 @@
       <option value="Games">Games</option>
     </select>
   </div>
-  <button (click)="addProject(newName.value, newDescription.value, newGoal.value, newPlans.value, newSwag.value, newCategory.value); newName.value=''; newDescription.value=''; newGoal.value=''; newPlans.value=''" routerLink='' type="button" name="button">ADD</button>
+  <button (click)="addProject(newName.value, newDescription.value, newGoal.value, newPlans.value, newSwag.value, newCategory.value, newImage.value); newName.value=''; newDescription.value=''; newGoal.value=''; newPlans.value=''; newImage.value=''" routerLink='' type="button" name="button">ADD</button>
   </div>
 </div>

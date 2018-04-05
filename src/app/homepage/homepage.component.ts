@@ -18,7 +18,7 @@ import { AuthGuard } from '../services/auth-guard.service'
 
 export class HomepageComponent implements OnInit {
   projects: FirebaseListObservable<any[]>;
-  filterCategory: string;
+  filterCategory: string = 'All Projects';
   filtered: boolean = false;
 
   constructor(private projectService: ProjectService,
@@ -33,13 +33,37 @@ export class HomepageComponent implements OnInit {
   }
 
   setFilterCategory(category: string) {
-    if(!this.filtered){
       this.filterCategory = category;
       this.filtered = true;
-    } else {
-      this.filtered = false;
-    }
   }
 
+  resetFilterCategory(){
+    this.filterCategory = 'All Projects'
+    this.filtered = false;
+  }
+
+  colorByFunding(project){
+    let percentFunded = (project.fundsRaised / project.goal)*100;
+    if(percentFunded === 100){
+      return "green";
+    } else if(percentFunded >= 75) {
+      return "yellow";
+    }else if( percentFunded >= 50) {
+      return "orange";
+    }else if(percentFunded >= 25) {
+      return "red";
+    }else {
+      return "";
+    }
+  }
+  rowIndex(idx){
+    if((idx+1) % 3 === 0){
+      return "row";
+    } else if (idx === 0){
+      return "row";
+    } else {
+      return ""
+    }
+  }
 
 }

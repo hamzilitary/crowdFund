@@ -13,7 +13,7 @@ import { CrowdFundProject } from '../models/crowdFundProject.model';
 })
 export class ComicsIllustrationComponent implements OnInit {
   projects: FirebaseListObservable<any[]>;
-  filterCategory: string = "Games";
+  filterCategory: string = "Comics/Illustration";
   constructor(private projectService: ProjectService, private router: Router) { }
 
   ngOnInit() {

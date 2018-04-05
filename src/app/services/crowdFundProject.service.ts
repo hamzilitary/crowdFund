@@ -33,7 +33,7 @@ export class ProjectService {
 
   updateProject(localUpdatedProject) {
     let projectEntryInFirebase = this.getProjectById(localUpdatedProject.$key);
-    projectEntryInFirebase.update({name: localUpdatedProject.name, starters: localUpdatedProject.starters, desc: localUpdatedProject.desc, goal: localUpdatedProject.goal, plans: localUpdatedProject.plans, swag: localUpdatedProject.swag, imageUrl: localUpdatedProject.imageUrl});
+    projectEntryInFirebase.update({name: localUpdatedProject.name, starters: localUpdatedProject.starters, desc: localUpdatedProject.desc, goal: localUpdatedProject.goal, plans: localUpdatedProject.plans, swag: localUpdatedProject.swag, imgUrl: localUpdatedProject.imgUrl});
   }
 
   updateProjectStarters(localUpdatedProject) {

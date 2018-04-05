@@ -3,6 +3,8 @@
     <h2>{{projectToDisplay?.name}} - {{projectToDisplay?.category}}</h2>
     <h5>Funding Goal: {{projectToDisplay?.goal}}</h5>
     <h5>Total Funding: {{projectToDisplay?.fundsRaised}}</h5>
+    <progress-bar [progress]="percentFunded"></progress-bar>
+
 
     <h5>Starters:</h5>
     <ul>
@@ -15,6 +17,7 @@
 
     <h5>Plans After Funding:</h5>
     <p>{{projectToDisplay?.plans}}</p>
+
 
     <div class="form-group">
       <label>Donate Amount:</label>

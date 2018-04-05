@@ -25,13 +25,3 @@ export class ScienceTechComponent implements OnInit {
   }
 
 }
-
-
-
-
-
-
-
-
-
-}

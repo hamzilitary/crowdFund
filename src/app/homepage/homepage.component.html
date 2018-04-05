@@ -1,31 +1,25 @@
-<h2>Project Database</h2>
+<h1 class="header">Welcome To Punchstarter</h1>
+<h3 class="header">Now Displaying: {{filterCategory}}</h3>
 
-<div class="form-group">
-  <select #newCategory>
-    <option value="Photography/Video">Photography/Video</option>
-    <option value="Science/Tech">Science/Tech</option>
-    <option value="Food/Craft">Food & Craft</option>
-    <option value="Comics/Illustration">Comics & Illustration</option>
-    <option value="Games">Games</option>
-  </select>
-</div>
-<button (click)="setFilterCategory(newCategory.value)">Toggle Filter</button>
 <div *ngIf = "!filtered">
-<div *ngFor="let project of projects | async"  class="card">
-  <img class="card-img-top" src="{{project.imgUrl}}" alt="">
-  <div class="card-body">
-    <h3><em>{{project.name}}</em> - {{project.category}}</h3>
-    <div *ngFor="let starter of project['starters']">
-      <h6>{{starter}}</h6>
-    </div>
-    <button (click)="goToDetail(project)" type="button" name="button">View Project</button>
+  <div class="form-group header">
+    <select #newCategory>
+      <option value="Photography/Video">Photography/Video</option>
+      <option value="Science/Tech">Science/Tech</option>
+      <option value="Food/Craft">Food & Craft</option>
+      <option value="Comics/Illustration">Comics & Illustration</option>
+      <option value="Games">Games</option>
+    </select>
   </div>
-</div>
+  <button class="btn btn-dark header" (click)="setFilterCategory(newCategory.value)">Filter Categories</button>
 </div>
 <div *ngIf = "filtered">
+<button class="btn btn-dark header" (click)="resetFilterCategory()">All Projects</button>
+</div>
+<div *ngIf = "!filtered">
   <div *ngFor="let project of projects | async">
-    <div *ngIf = "project.category === filterCategory">
-      <div class="card">
+    <div class="card">
+      <div [class]="colorByFunding(project)">
         <img class="card-img-top" src="{{project.imgUrl}}" alt="">
         <div class="card-body">
           <h3><em>{{project.name}}</em> - {{project.category}}</h3>
@@ -34,6 +28,26 @@
           </div>
           <button (click)="goToDetail(project)" type="button" name="button">View Project</button>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf = "filtered">
+  <div *ngFor="let project of projects | async">
+    <div *ngIf = "project.category === filterCategory">
+      <div class="card">
+        <div [class]="colorByFunding(project)">
+          <img class="card-img-top" src="{{project.imgUrl}}" alt="">
+          <div class="card-body">
+            <h3><em>{{project.name}}</em> - {{project.category}}</h3>
+            <div *ngFor="let starter of project['starters']">
+              <h6>{{starter}}</h6>
+            </div>
+            <button (click)="goToDetail(project)" type="button" name="button">View Project</button>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>

@@ -22,6 +22,8 @@ import { FoodCraftComponent } from './food-craft/food-craft.component';
 import { GamesComponent } from './games/games.component';
 import { ScienceTechComponent } from './science-tech/science-tech.component';
 import { ComicsIllustrationComponent } from './comics-illustration/comics-illustration.component';
+import {ProgressBarModule} from "angular-progress-bar";
+
 
 
 
@@ -53,7 +55,8 @@ export const firebaseConfig = {
    HttpModule,
    routing,
    AngularFireModule.initializeApp(firebaseConfig),
-   AngularFireDatabaseModule
+   AngularFireDatabaseModule,
+   ProgressBarModule
   ],
   providers: [AuthGuard, AuthenticationService, AngularFireAuth],
   bootstrap: [AppComponent]

@@ -4,6 +4,8 @@ import { Location } from '@angular/common';
 import { CrowdFundProject } from '../models/crowdFundProject.model';
 import { ProjectService } from '../services/crowdFundProject.service';
 import { FirebaseObjectObservable } from 'angularfire2/database';
+import {ProgressBarModule} from "angular-progress-bar"
+
 
 @Component({
   selector: 'app-detail',
@@ -14,6 +16,7 @@ import { FirebaseObjectObservable } from 'angularfire2/database';
 export class DetailComponent implements OnInit {
   projectId: string;
   projectToDisplay;
+  percentFunded: number;
 
   constructor(private route: ActivatedRoute, private location: Location, private projectService: ProjectService) { }
 
@@ -22,6 +25,7 @@ export class DetailComponent implements OnInit {
       this.projectId = urlParameters['id'];
       });
       this.projectService.getProjectById(this.projectId).subscribe(dataLastEmittedFromObserver => {this.projectToDisplay = dataLastEmittedFromObserver;
+      this.percentFunded = (this.projectToDisplay.fundsRaised / this.projectToDisplay.goal)*100
     });
   }
 
